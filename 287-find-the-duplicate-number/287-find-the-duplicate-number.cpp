@@ -1,16 +1,11 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        int n = nums.size();
-        set<int> s;
         
-        for(int i=0;i<n;i++)
+        while(nums[0] != nums[nums[0]])
         {
-             if(s.find(nums[i]) != s.end())
-                 return nums[i];
-            else
-                s.insert(nums[i]);
+             swap(nums[0], nums[nums[0]]);
         }
-        return -1;
+        return nums[0];
     }
 };
